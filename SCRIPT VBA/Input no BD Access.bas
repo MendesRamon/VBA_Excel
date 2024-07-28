@@ -1,7 +1,7 @@
 Attribute VB_Name = "BANCO_DADOS"
 Sub InserirDadosNaTabelaAccess()
 
-    ' Definir vari·veis
+    ' Definir vari√°veis
     Dim conn                        As Object
     Dim strSQL                      As String
     Dim caminhoDoBancoDeDados       As String
@@ -16,22 +16,19 @@ Sub InserirDadosNaTabelaAccess()
     ' Especificar o caminho do banco de dados do Access
     caminhoDoBancoDeDados = "C:\Users\Lenovo\Desktop\PROJETOS_AUTOMACAO\CONSOLIDANDO_ARQUIVOS\BANCO_DADOS\BANCO_DE_DADOS.accdb"
 
-    ' Nome da tabela que vocÍ deseja atualizar
+    ' Nome da tabela que voc√™ deseja atualizar
     nomeDaTabela = "tabela_teste"
+
 
-    ' Valores que vocÍ deseja inserir
-   ' valorCampo1 = "A"
-    'valorCampo2 = 123  ' Exemplo de valor inteiro
-
-    ' Inicializar objeto de conex„o
+    ' Inicializar objeto de conex√£o
     Set conn = CreateObject("ADODB.Connection")
 
-    ' Estabelecer conex„o com o banco de dados do Access
+    ' Estabelecer conex√£o com o banco de dados do Access
     conn.Open "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & caminhoDoBancoDeDados
 
     For Each Rng In tabela
     
-    'atribuindo valor din‚mico a vari·veis
+    'atribuindo valor din√¢mico a vari√°veis
         valorCampo1 = Rng
         valorCampo2 = Rng.Offset(, 1)
     
@@ -44,10 +41,10 @@ Sub InserirDadosNaTabelaAccess()
         
     Next
 
-    ' Fechar a conex„o
+    ' Fechar a conex√£o
     conn.Close
 
-    ' Liberar memÛria
+    ' Liberar mem√≥ria
     Set conn = Nothing
     
     MsgBox "Dados Inseridos com Sucesso!", vbInformation, "Insert em BD"
